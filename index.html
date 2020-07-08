@@ -4,18 +4,41 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<title>Document</title>
+	<title>Работа со списками</title>
 </head>
 <body>
 	<div class="wrapper">
 		<div id="app">
-			
+			<ul>
+				<li>{{ people[0] }}</li>
+				<li>{{ people[1] }}</li>
+				<li>{{ people[2] }}</li>
+			</ul>
+			<hr>
+			<ul>
+				<li v-for="(pers, i) in people">{{i+1}} - {{ pers }}</li>
+			</ul>
+			<hr>
+			<ul>
+				<li v-for="(pers, i) in fullInfo">{{i+1}} - {{ pers.name }} {{ pers.age }}</li>
+			</ul>
 		</div>
 	</div>
 	<script>
 		var app = new Vue({
 			el: '#app',
-			data: {}
+			data: {
+				people: [
+					'Vlad',
+					'Andrey',
+					'Sasha'
+				],
+				fullInfo: [
+					{name: 'Vlad', age: 20},
+					{name: 'Max', age: 25},
+					{name: 'Anna', age: 30}
+				]
+			}
 		})
 	</script>
 </body>
