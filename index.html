@@ -22,6 +22,10 @@
 			<ul>
 				<li v-for="(pers, i) in fullInfo">{{i+1}} - {{ pers.name }} {{ pers.age }}</li>
 			</ul>
+			<hr>
+			<ul>
+				<li v-for="(pers, key, i) in person"> <em> {{ i + 1 }} </em> <b>{{ key }} </b>  {{ pers }} </li>
+			</ul>
 		</div>
 	</div>
 	<script>
@@ -37,7 +41,12 @@
 					{name: 'Vlad', age: 20},
 					{name: 'Max', age: 25},
 					{name: 'Anna', age: 30}
-				]
+				],
+				person: {
+					name: 'Doston',
+					age: '23',
+					job: 'Frontend'
+				}
 			}
 		})
 	</script>
